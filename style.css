@@ -1,0 +1,129 @@
+/* I removed all margins and paddings to 
+control how elements are spaced, instead of relying on browser defaults. */
+* {
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    background-color: rgb(239, 239, 241);
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+
+.main {
+  max-width: 1000px;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  padding: 2rem;
+  max-width: 500px;
+  min-width: 50%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+}
+h1 {
+  margin-bottom: 1.5rem;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.task .flex-row {
+  margin-top: 0.5rem;
+}
+.checked {
+  text-decoration: line-through;
+  color: grey;
+}
+.input {
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid gray;
+  transition: all 0.3s;
+  padding-left: 10px;
+  padding-right: 10px;   
+  width: 100%;
+}
+.input:hover {
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+  border: 1px solid rgb(94, 94, 94);
+}
+input:focus, button:focus {
+  outline: 2px solid black;
+}
+.btn {
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  padding: 5px 10px;
+  transition: all 0.3s;
+  border-radius: 5px;
+  color: white;
+}
+.task {
+  margin: 1rem 0;
+}
+.task label {
+  margin-left: 1rem
+}
+.btn--green {
+  background-color: rgb(76, 175, 80);
+  border: 2px solid rgb(76, 175, 80);
+}
+.btn--red {
+  background-color: rgb(244, 67, 54);
+  border: 2px solid rgb(244, 67, 54);
+}
+.btn:hover {
+  color: rgb(76, 175, 80);
+  background-color: white;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+}
+.btn--green:hover {
+  color: rgb(76, 175, 80);
+}
+.btn--red:hover {
+  color: rgb(244, 67, 54);
+}
+.btn:disabled, .btn:hover:disabled {
+  cursor: not-allowed;
+  background-color: rgb(237, 235, 235);
+  color: gray;
+}
+.btn--add::before {
+  content: "Add Task";
+}
+.fade-out {
+  opacity: 0;
+  transform: translateX(30%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+@media (max-width: 500px) {
+  .main {
+      padding: 1.5rem;
+  }
+  .container{
+    margin-top: 1rem;
+  }
+  .btn--add::before {
+    content: "+";
+  }
+}
